@@ -1,0 +1,30 @@
+.efecto-escritura {
+  font-family: 'Courier New', Courier, monospace;
+  display: inline-block;
+  overflow: hidden;
+  border-right: .10em solid orange;
+  white-space: nowrap;
+  letter-spacing: .10em;
+  margin: 0 auto;
+
+  /* infinite: hace que no se detenga nunca.
+     alternate: hace que, al terminar de escribirse, se borre hacia atrás 
+     en lugar de saltar bruscamente al inicio.
+  */
+  animation: 
+    typing 2s steps(20, end) infinite alternate,
+    blink-caret .75s step-end infinite;
+
+  /* Ajusta este ancho a la cantidad de letras de tu palabra */
+  width: 10ch; 
+}
+
+@keyframes typing {
+  from { width: 0 }
+  to { width: 10ch } /* Debe coincidir con el width de arriba */
+}
+
+@keyframes blink-caret {
+  from, to { border-color: transparent }
+  50% { border-color: dimgray; }
+}
